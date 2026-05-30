@@ -109,13 +109,28 @@
         : []
 
     return authorProfiles.filter(function (profile) {
-      return (
-        profile &&
-        typeof profile === 'object' &&
-        typeof profile.username === 'string' &&
-        profile.username.trim().length > 0
-      )
+      return profile && typeof profile === 'object' && getAuthorName(profile).length > 0
     })
+  }
+
+  function getAuthorName(authorProfile) {
+    if (
+      authorProfile &&
+      typeof authorProfile.displayName === 'string' &&
+      authorProfile.displayName.trim().length > 0
+    ) {
+      return authorProfile.displayName.trim()
+    }
+
+    if (
+      authorProfile &&
+      typeof authorProfile.username === 'string' &&
+      authorProfile.username.trim().length > 0
+    ) {
+      return authorProfile.username.trim()
+    }
+
+    return ''
   }
 
   function appendAuthorSeparator(index, total) {
@@ -137,7 +152,7 @@
   }
 
   function appendAuthorProfile(authorProfile) {
-    var authorName = authorProfile.username.trim()
+    var authorName = getAuthorName(authorProfile)
     var authorWebsite = authorProfile.website
 
     if (authorWebsite && isSafeHttpUrl(authorWebsite)) {

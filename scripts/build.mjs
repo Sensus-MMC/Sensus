@@ -146,6 +146,18 @@ const getAuthorProfiles = (article) => {
   return []
 }
 
+const getAuthorLabel = (profile) => {
+  if (typeof profile?.displayName === 'string' && profile.displayName.trim().length > 0) {
+    return profile.displayName.trim()
+  }
+
+  if (typeof profile?.username === 'string' && profile.username.trim().length > 0) {
+    return profile.username.trim()
+  }
+
+  return ''
+}
+
 const joinAuthorNames = (names) => {
   if (names.length === 0) {
     return 'Editorial'
@@ -163,9 +175,7 @@ const joinAuthorNames = (names) => {
 }
 
 const getAuthorName = (article) => {
-  const names = getAuthorProfiles(article)
-    .map((profile) => (typeof profile?.username === 'string' ? profile.username.trim() : ''))
-    .filter(Boolean)
+  const names = getAuthorProfiles(article).map(getAuthorLabel).filter(Boolean)
 
   return joinAuthorNames(names)
 }
