@@ -9,9 +9,7 @@ const distDir = path.join(rootDir, 'dist')
 
 const config = {
   apiBase: process.env.SENSUS_API_BASE || 'http://127.0.0.1:3100/api/articles',
-  defaultOgImage:
-    process.env.SENSUS_OG_IMAGE ||
-    'https://cdn.discordapp.com/attachments/1483229725676798043/1509653205770829924/dtjv4nf.png?ex=6a1a9e5c&is=6a194cdc&hm=cb215a7723c501c7bda7eb67be18787f3b67253803a1b7ad26c0e89e53379f4c&animated=true',
+  defaultOgImage: process.env.SENSUS_OG_IMAGE || null,
   siteDescription:
     'Sensus is a bi-weekly newsletter covering modded Minecraft news, pack updates, and community happenings.',
   siteName: 'Sensus MMC',
@@ -19,6 +17,27 @@ const config = {
     /\/$/,
     '',
   ),
+}
+
+const ogImageTypeMap = new Map([
+  ['.gif', 'image/gif'],
+  ['.jpg', 'image/jpeg'],
+  ['.jpeg', 'image/jpeg'],
+  ['.png', 'image/png'],
+  ['.svg', 'image/svg+xml'],
+  ['.webp', 'image/webp'],
+])
+
+const getDefaultOgImage = () =>
+  config.defaultOgImage || `${config.siteOrigin}/assets/Sensus-banner.webp`
+
+const getOgImageType = (value) => {
+  try {
+    const pathname = new URL(value, 'https://sensusmmc.news').pathname.toLowerCase()
+    return ogImageTypeMap.get(path.extname(pathname)) || 'image/webp'
+  } catch {
+    return 'image/webp'
+  }
 }
 
 const fetchAllArticles = async () => {
@@ -294,6 +313,7 @@ const renderArticleEntry = (article) => {
 
 const buildHomePage = async (articles) => {
   const template = await readFile(path.join(rootDir, 'index.html'), 'utf8')
+  const ogImage = getDefaultOgImage()
   const listings =
     articles.length > 0
       ? articles.map(renderArticleEntry).join('\n')
@@ -308,14 +328,19 @@ const buildHomePage = async (articles) => {
 
   return renderTemplate(template, {
     ARTICLE_LISTINGS: listings,
+    OG_IMAGE: escapeHtml(ogImage),
+    OG_IMAGE_TYPE: escapeHtml(getOgImageType(ogImage)),
     SITE_ORIGIN: config.siteOrigin,
   })
 }
 
 const buildAboutPage = async () => {
   const template = await readFile(path.join(rootDir, 'about.html'), 'utf8')
+  const ogImage = getDefaultOgImage()
 
   return renderTemplate(template, {
+    OG_IMAGE: escapeHtml(ogImage),
+    OG_IMAGE_TYPE: escapeHtml(getOgImageType(ogImage)),
     SITE_ORIGIN: config.siteOrigin,
   })
 }
@@ -325,7 +350,7 @@ const buildArticlePage = async (article) => {
   const title = article.title || 'Untitled article'
   const summary = getSummary(article)
   const featureImage = resolveMedia(article.featureImage)
-  const ogImage = featureImage?.url ? absoluteAssetUrl(featureImage.url) : config.defaultOgImage
+  const ogImage = featureImage?.url ? absoluteAssetUrl(featureImage.url) : getDefaultOgImage()
   const articleUrl = `${config.siteOrigin}/articles/${encodeURIComponent(article.slug)}.html`
 
   return renderTemplate(template, {
@@ -335,6 +360,7 @@ const buildArticlePage = async (article) => {
     ARTICLE_TAXONOMY: buildArticleTaxonomy(article),
     ARTICLE_URL: articleUrl,
     OG_IMAGE: escapeHtml(ogImage),
+    OG_IMAGE_TYPE: escapeHtml(getOgImageType(ogImage)),
     PAGE_DESCRIPTION: escapeHtml(summary),
     PAGE_TITLE: escapeHtml(`${title} - ${config.siteName}`),
   })
