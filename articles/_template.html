@@ -3,47 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>ARTICLE TITLE - Sensus MMC</title>
-<meta name="description" content="Sensus MMC article covering modded Minecraft news, pack updates, and community happenings.">
+<title>{{PAGE_TITLE}}</title>
+<meta name="description" content="{{PAGE_DESCRIPTION}}">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Sensus MMC">
-<meta property="og:url" content="https://sensus-mmc.github.io/Sensus/articles/ARTICLE-SLUG.html">
-<meta property="og:title" content="ARTICLE TITLE - Sensus MMC">
-<meta property="og:description" content="Sensus MMC article covering modded Minecraft news, pack updates, and community happenings.">
-<meta property="og:image" content="https://cdn.discordapp.com/attachments/1483229725676798043/1509653205770829924/dtjv4nf.png?ex=6a1a9e5c&is=6a194cdc&hm=cb215a7723c501c7bda7eb67be18787f3b67253803a1b7ad26c0e89e53379f4c&animated=true">
-<meta property="og:image:url" content="https://cdn.discordapp.com/attachments/1483229725676798043/1509653205770829924/dtjv4nf.png?ex=6a1a9e5c&is=6a194cdc&hm=cb215a7723c501c7bda7eb67be18787f3b67253803a1b7ad26c0e89e53379f4c&animated=true">
-<meta property="og:image:secure_url" content="https://cdn.discordapp.com/attachments/1483229725676798043/1509653205770829924/dtjv4nf.png?ex=6a1a9e5c&is=6a194cdc&hm=cb215a7723c501c7bda7eb67be18787f3b67253803a1b7ad26c0e89e53379f4c&animated=true">
-<meta property="og:image:type" content="image/png">
+<meta property="og:url" content="{{ARTICLE_URL}}">
+<meta property="og:title" content="{{PAGE_TITLE}}">
+<meta property="og:description" content="{{PAGE_DESCRIPTION}}">
+<meta property="og:image" content="{{OG_IMAGE}}">
+<meta property="og:image:url" content="{{OG_IMAGE}}">
+<meta property="og:image:secure_url" content="{{OG_IMAGE}}">
+<meta property="og:image:type" content="{{OG_IMAGE_TYPE}}">
 <meta property="og:image:width" content="1600">
 <meta property="og:image:height" content="900">
 <meta property="og:image:alt" content="Sensus MMC banner">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ARTICLE TITLE - Sensus MMC">
-<meta name="twitter:description" content="Sensus MMC article covering modded Minecraft news, pack updates, and community happenings.">
-<meta name="twitter:image" content="https://cdn.discordapp.com/attachments/1483229725676798043/1509653205770829924/dtjv4nf.png?ex=6a1a9e5c&is=6a194cdc&hm=cb215a7723c501c7bda7eb67be18787f3b67253803a1b7ad26c0e89e53379f4c&animated=true">
+<meta name="twitter:title" content="{{PAGE_TITLE}}">
+<meta name="twitter:description" content="{{PAGE_DESCRIPTION}}">
+<meta name="twitter:image" content="{{OG_IMAGE}}">
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 </head>
 <body><canvas id="bg-canvas"></canvas>
 <div id="site-header">
-    <a href="../index.html"><img src="../assets/Sensus-banner.webp" alt="Sensus MMC - Reliable MMC News"></a>
+    <a href="/"><img src="../assets/Sensus-banner.webp" alt="Sensus MMC - Reliable MMC News"></a>
 </div>
 <div id="navbar">
     <div id="navbar-inner">
-        <a href="../index.html">Home</a><a href="../about.html">About</a><a href="https://github.com/Sensus-MMC" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="/">Home</a><a href="/about">About</a><a href="https://github.com/Sensus-MMC" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
 </div>
 <div id="wrapper">
 <div id="col-article">
 <article class="full-article">
-    <h1>ARTICLE TITLE</h1>
-    <div class="meta">Month DD, YYYY &nbsp; AUTHOR</div>
+    <h1>{{ARTICLE_HEADING}}</h1>
+    {{ARTICLE_TAXONOMY}}
+    <div class="meta">{{ARTICLE_META}}</div>
     <hr>
-    <p>Lead paragraph here.</p>
-    <h2>Section Heading</h2>
-    <p>Body text here.</p>
+    {{ARTICLE_BODY}}
     <hr>
-    <a class="back-link" href="../index.html">Back</a>
+    <a class="back-link" href="/">Back</a>
 </article>
 </div>
 </div>

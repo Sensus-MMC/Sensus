@@ -7,51 +7,44 @@
 <meta name="description" content="Sensus is a bi-weekly newsletter covering modded Minecraft news, pack updates, and community happenings.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sensus MMC">
-<meta property="og:url" content="https://sensus-mmc.github.io/Sensus/">
+<meta property="og:url" content="{{SITE_ORIGIN}}/">
 <meta property="og:title" content="Sensus MMC - Reliable MMC News">
 <meta property="og:description" content="Sensus is a bi-weekly newsletter covering modded Minecraft news, pack updates, and community happenings.">
-<meta property="og:image" content="https://cdn.discordapp.com/attachments/1483229725676798043/1509653205770829924/dtjv4nf.png?ex=6a1a9e5c&is=6a194cdc&hm=cb215a7723c501c7bda7eb67be18787f3b67253803a1b7ad26c0e89e53379f4c&animated=true">
-<meta property="og:image:url" content="https://cdn.discordapp.com/attachments/1483229725676798043/1509653205770829924/dtjv4nf.png?ex=6a1a9e5c&is=6a194cdc&hm=cb215a7723c501c7bda7eb67be18787f3b67253803a1b7ad26c0e89e53379f4c&animated=true">
-<meta property="og:image:secure_url" content="https://cdn.discordapp.com/attachments/1483229725676798043/1509653205770829924/dtjv4nf.png?ex=6a1a9e5c&is=6a194cdc&hm=cb215a7723c501c7bda7eb67be18787f3b67253803a1b7ad26c0e89e53379f4c&animated=true">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="{{OG_IMAGE}}">
+<meta property="og:image:url" content="{{OG_IMAGE}}">
+<meta property="og:image:secure_url" content="{{OG_IMAGE}}">
+<meta property="og:image:type" content="{{OG_IMAGE_TYPE}}">
 <meta property="og:image:width" content="1600">
 <meta property="og:image:height" content="900">
 <meta property="og:image:alt" content="Sensus MMC banner">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Sensus MMC - Reliable MMC News">
 <meta name="twitter:description" content="Sensus is a bi-weekly newsletter covering modded Minecraft news, pack updates, and community happenings.">
-<meta name="twitter:image" content="https://cdn.discordapp.com/attachments/1483229725676798043/1509653205770829924/dtjv4nf.png?ex=6a1a9e5c&is=6a194cdc&hm=cb215a7723c501c7bda7eb67be18787f3b67253803a1b7ad26c0e89e53379f4c&animated=true">
+<meta name="twitter:image" content="{{OG_IMAGE}}">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body><canvas id="bg-canvas"></canvas>
 <div id="site-header">
-    <a href="index.html"><img src="assets/Sensus-banner.webp" alt="Sensus MMC - Reliable MMC News"></a>
+    <a href="/"><img src="assets/Sensus-banner.webp" alt="Sensus MMC - Reliable MMC News"></a>
 </div>
 <div id="navbar">
     <div id="navbar-inner">
-        <a href="index.html">Home</a><a href="about.html">About</a><a href="https://github.com/Sensus-MMC" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="/">Home</a><a href="/about">About</a><a href="https://github.com/Sensus-MMC" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://discord.gg/UKd3UjGKwQ" target="_blank" rel="noopener noreferrer">Discord</a>
     </div>
 </div>
 <div id="wrapper">
 <div id="columns">
     <div id="col-main">
         <div class="listing-header">Issues</div>
-        <div class="article-entry">
-            <img class="entry-icon" src="assets/Sensus-logo.png" alt="">
-            <div class="entry-text">
-                <h3><a href="articles/2026-05-29-welcome-to-sensus.html">Welcome to Sensus MMC</a></h3>
-                <div class="meta">May 29, 2026 &nbsp; Editorial</div>
-                <div class="excerpt">Sensus MMC launches as a dedicated newsletter covering modded Minecraft news, pack updates, and community happenings.</div>
-            </div>
-        </div>
+        {{ARTICLE_LISTINGS}}
     </div>
     <div id="col-sidebar">
         <div class="sidebar-box">
             <div class="sb-head">About</div>
             <div class="sb-body">
                 <p>Sensus is a bi-weekly newsletter covering modded Minecraft news, pack updates, and community happenings.</p>
-                <p><a href="about.html">More info</a></p>
+                <p><a href="/about">More info</a></p>
             </div>
         </div>
         <div class="sidebar-box">
