@@ -2,6 +2,10 @@ name: Update tablet page pack
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/tablet.yml'
+      - 'scripts/tablet.mjs'
   schedule:
     - cron: '17 */6 * * *'
   repository_dispatch:
