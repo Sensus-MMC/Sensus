@@ -221,6 +221,32 @@ const getSummary = (article) => {
   return config.siteDescription
 }
 
+export const buildNewsFeed = async () => {
+  const articles = await fetchAllArticles()
+  const posts = articles
+    .filter((article) => article && article.slug)
+    .map((article) => {
+      const id = `articles-${article.slug}`
+      const featureImage = resolveMedia(article.featureImage)
+      return {
+        id,
+        title: article.title || '',
+        url: `/articles/${encodeURIComponent(article.slug)}`,
+        date: getDateTimeAttribute(article.publishedAt),
+        author: getAuthorName(article),
+        excerpt: getSummary(article),
+        image: featureImage?.url ? absoluteAssetUrl(featureImage.url) : '',
+        page: id,
+      }
+    })
+
+  return {
+    schema: 1,
+    generated: new Date().toISOString(),
+    posts,
+  }
+}
+
 const getDateTimeAttribute = (value) => {
   if (!value) {
     return ''

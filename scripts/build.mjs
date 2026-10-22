@@ -2,6 +2,8 @@ import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+import { buildNewsFeed } from './site.mjs'
+
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const rootDir = path.resolve(__dirname, '..')
@@ -391,6 +393,11 @@ const main = async () => {
   await copyStaticAssets()
   await writeFile(path.join(distDir, 'index.html'), await buildHomePage(articles), 'utf8')
   await writeFile(path.join(distDir, 'about.html'), await buildAboutPage(), 'utf8')
+  await writeFile(path.join(distDir, 'feed.json'), `${JSON.stringify(await buildNewsFeed(), null, 2)}\n`, 'utf8')
+  try {
+    await cp(path.join(rootDir, 'tablet'), path.join(distDir, 'tablet'), { recursive: true })
+  } catch {
+  }
   await writeArticlePages(articles)
 }
 

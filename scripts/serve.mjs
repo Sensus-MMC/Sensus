@@ -4,6 +4,7 @@ import http from 'node:http'
 import path from 'node:path'
 
 import {
+  buildNewsFeed,
   renderArticlePage,
   renderHomePage,
   renderTemplatePage,
@@ -12,6 +13,7 @@ import {
 } from './site.mjs'
 
 const assetsDir = path.join(rootDir, 'assets')
+const tabletDir = path.join(rootDir, 'tablet')
 const port = Number(process.env.PORT || 4173)
 
 const mimeTypes = {
@@ -32,6 +34,14 @@ const sendHtml = (response, statusCode, html) => {
 const sendText = (response, statusCode, message) => {
   response.writeHead(statusCode, { 'Content-Type': 'text/plain; charset=utf-8' })
   response.end(message)
+}
+
+const sendJson = (response, statusCode, value) => {
+  response.writeHead(statusCode, {
+    'Content-Type': 'application/json; charset=utf-8',
+    'Cache-Control': 'public, max-age=300',
+  })
+  response.end(JSON.stringify(value))
 }
 
 const normalizeTemplatePath = (requestPath) => {
@@ -75,12 +85,55 @@ const resolveAssetPath = async (requestPath) => {
   }
 }
 
+const resolveTabletPath = async (requestPath) => {
+  const tabletPath = requestPath.replace(/^\/tablet\//, '')
+  const targetPath = path.normalize(path.join(tabletDir, tabletPath))
+
+  if (!targetPath.startsWith(tabletDir)) {
+    return null
+  }
+
+  try {
+    const fileStats = await stat(targetPath)
+
+    if (fileStats.isDirectory()) {
+      return null
+    }
+
+    return targetPath
+  } catch {
+    return null
+  }
+}
+
 const server = http.createServer(async (request, response) => {
   const requestUrl = new URL(request.url || '/', `http://${request.headers.host || 'localhost'}`)
 
   try {
     if (requestUrl.pathname === '/health') {
       sendText(response, 200, 'ok')
+      return
+    }
+
+    if (requestUrl.pathname === '/feed.json') {
+      sendJson(response, 200, await buildNewsFeed())
+      return
+    }
+
+    if (requestUrl.pathname.startsWith('/tablet/')) {
+      const filePath = await resolveTabletPath(requestUrl.pathname)
+
+      if (!filePath) {
+        sendText(response, 404, 'Not found')
+        return
+      }
+
+      const ext = path.extname(filePath)
+      response.writeHead(200, {
+        'Content-Type': mimeTypes[ext] || 'application/octet-stream',
+        'Cache-Control': 'public, max-age=300',
+      })
+      createReadStream(filePath).pipe(response)
       return
     }
 
