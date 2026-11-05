@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generated": "2026-11-05T06:45:35.823Z",
+  "generated": "2026-11-05T19:57:17.393Z",
   "viewport": {
     "cssWidth": 614,
     "cssHeight": 616,
@@ -17,11 +17,11 @@
     {
       "id": "home",
       "url": "/",
-      "title": "sensusmmc.news | 521: Web server is down",
+      "title": "Sensus MMC - Reliable MMC News",
       "sourceWidth": 1842,
-      "sourceHeight": 3162,
+      "sourceHeight": 1848,
       "cssWidth": 614,
-      "cssHeight": 1054,
+      "cssHeight": 616,
       "tiles": [
         {
           "file": "home/0000.png",
@@ -30,65 +30,150 @@
           "width": 2048,
           "height": 2048,
           "contentWidth": 1842,
-          "contentHeight": 2048
-        },
-        {
-          "file": "home/0001.png",
-          "x": 0,
-          "y": 2048,
-          "width": 2048,
-          "height": 2048,
-          "contentWidth": 1842,
-          "contentHeight": 1114
+          "contentHeight": 1848
         }
       ],
       "links": [
         {
-          "x": 214,
-          "y": 312,
-          "width": 356,
-          "height": 57,
-          "href": "https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_521&utm_campaign=sensusmmc.news",
-          "external": true,
-          "text": "cloudflare.com"
+          "x": 60,
+          "y": 0,
+          "width": 384,
+          "height": 216,
+          "href": "/",
+          "external": false,
+          "text": ""
         },
         {
-          "x": 96,
-          "y": 1060,
-          "width": 367,
-          "height": 84,
-          "href": "https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_521&utm_campaign=sensusmmc.news",
-          "external": true,
-          "text": "Cloudflare"
+          "x": 60,
+          "y": 249,
+          "width": 212,
+          "height": 107,
+          "href": "/",
+          "external": false,
+          "text": "Home"
         },
         {
-          "x": 489,
-          "y": 2728,
-          "width": 926,
-          "height": 57,
-          "href": "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-521/",
-          "external": true,
-          "text": "Additional troubleshooting information"
+          "x": 272,
+          "y": 249,
+          "width": 207,
+          "height": 107,
+          "href": "/about",
+          "external": false,
+          "text": "About"
         },
         {
-          "x": 627,
-          "y": 3058,
-          "width": 199,
-          "height": 45,
-          "href": "https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_521&utm_campaign=sensusmmc.news",
+          "x": 479,
+          "y": 249,
+          "width": 230,
+          "height": 107,
+          "href": "https://github.com/Sensus-MMC",
           "external": true,
-          "text": "Cloudflare"
+          "text": "GitHub"
+        },
+        {
+          "x": 709,
+          "y": 249,
+          "width": 243,
+          "height": 107,
+          "href": "https://discord.gg/UKd3UjGKwQ",
+          "external": true,
+          "text": "Discord"
+        },
+        {
+          "x": 291,
+          "y": 530,
+          "width": 653,
+          "height": 60,
+          "href": "/articles/welcome-to-sensus-mmc",
+          "external": false,
+          "text": "Welcome to Sensus MMC"
+        },
+        {
+          "x": 1375,
+          "y": 1016,
+          "width": 187,
+          "height": 51,
+          "href": "/about",
+          "external": false,
+          "text": "More info"
+        }
+      ]
+    },
+    {
+      "id": "articles-welcome-to-sensus-mmc",
+      "url": "/articles/welcome-to-sensus-mmc",
+      "title": "Welcome to Sensus MMC - Sensus MMC",
+      "sourceWidth": 1842,
+      "sourceHeight": 1848,
+      "cssWidth": 614,
+      "cssHeight": 616,
+      "tiles": [
+        {
+          "file": "articles-welcome-to-sensus-mmc/0000.png",
+          "x": 0,
+          "y": 0,
+          "width": 2048,
+          "height": 2048,
+          "contentWidth": 1842,
+          "contentHeight": 1848
+        }
+      ],
+      "links": [
+        {
+          "x": 60,
+          "y": 0,
+          "width": 384,
+          "height": 216,
+          "href": "/",
+          "external": false,
+          "text": ""
+        },
+        {
+          "x": 60,
+          "y": 249,
+          "width": 212,
+          "height": 107,
+          "href": "/",
+          "external": false,
+          "text": "Home"
+        },
+        {
+          "x": 272,
+          "y": 249,
+          "width": 207,
+          "height": 107,
+          "href": "/about",
+          "external": false,
+          "text": "About"
+        },
+        {
+          "x": 479,
+          "y": 249,
+          "width": 230,
+          "height": 107,
+          "href": "https://github.com/Sensus-MMC",
+          "external": true,
+          "text": "GitHub"
+        },
+        {
+          "x": 129,
+          "y": 1351,
+          "width": 100,
+          "height": 69,
+          "href": "/",
+          "external": false,
+          "text": "Back"
         }
       ]
     },
     {
       "id": "about",
       "url": "/about",
-      "title": "sensusmmc.news | 521: Web server is down",
+      "title": "About - Sensus MMC",
       "sourceWidth": 1842,
-      "sourceHeight": 3162,
+      "sourceHeight": 1881,
       "cssWidth": 614,
-      "cssHeight": 1054,
+      "cssHeight": 627,
       "tiles": [
         {
           "file": "about/0000.png",
@@ -97,54 +182,45 @@
           "width": 2048,
           "height": 2048,
           "contentWidth": 1842,
-          "contentHeight": 2048
-        },
-        {
-          "file": "about/0001.png",
-          "x": 0,
-          "y": 2048,
-          "width": 2048,
-          "height": 2048,
-          "contentWidth": 1842,
-          "contentHeight": 1114
+          "contentHeight": 1881
         }
       ],
       "links": [
         {
-          "x": 214,
-          "y": 312,
-          "width": 356,
-          "height": 57,
-          "href": "https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_521&utm_campaign=sensusmmc.news",
-          "external": true,
-          "text": "cloudflare.com"
+          "x": 60,
+          "y": 0,
+          "width": 384,
+          "height": 216,
+          "href": "/",
+          "external": false,
+          "text": ""
         },
         {
-          "x": 96,
-          "y": 1060,
-          "width": 367,
-          "height": 84,
-          "href": "https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_521&utm_campaign=sensusmmc.news",
-          "external": true,
-          "text": "Cloudflare"
+          "x": 60,
+          "y": 249,
+          "width": 212,
+          "height": 107,
+          "href": "/",
+          "external": false,
+          "text": "Home"
         },
         {
-          "x": 489,
-          "y": 2728,
-          "width": 926,
-          "height": 57,
-          "href": "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-521/",
-          "external": true,
-          "text": "Additional troubleshooting information"
+          "x": 272,
+          "y": 249,
+          "width": 207,
+          "height": 107,
+          "href": "/about",
+          "external": false,
+          "text": "About"
         },
         {
-          "x": 627,
-          "y": 3058,
-          "width": 199,
-          "height": 45,
-          "href": "https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_521&utm_campaign=sensusmmc.news",
+          "x": 479,
+          "y": 249,
+          "width": 230,
+          "height": 107,
+          "href": "https://github.com/Sensus-MMC",
           "external": true,
-          "text": "Cloudflare"
+          "text": "GitHub"
         }
       ]
     }
