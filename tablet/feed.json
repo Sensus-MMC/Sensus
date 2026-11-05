@@ -1,16 +1,5 @@
 {
   "schema": 1,
-  "generated": "2026-11-04T19:45:40.612Z",
-  "posts": [
-    {
-      "id": "articles-welcome-to-sensus-mmc",
-      "title": "Welcome to Sensus MMC",
-      "url": "/articles/welcome-to-sensus-mmc",
-      "date": "2026-05-30T09:33:39.771Z",
-      "author": "Sensus MMC",
-      "excerpt": "Short introduction",
-      "image": "https://sensusmmc.news/assets/Sensus-logo.png",
-      "page": "articles-welcome-to-sensus-mmc"
-    }
-  ]
+  "generated": "2026-11-05T06:45:35.823Z",
+  "posts": []
 }
